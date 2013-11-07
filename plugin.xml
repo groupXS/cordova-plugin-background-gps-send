@@ -30,7 +30,7 @@
             <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
         </config-file>
 
-        <source-file src="src/android/GeoSender.java" target-dir="src/com/groupxs/cordova/plugin/backgroundgpssend" />
+        <source-file src="src/android/BackgroundSender.java" target-dir="src/com/groupxs/cordova/plugin/backgroundgpssend" />
     </platform>
 
     <!-- ios -->
