@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:rim="http://www.blackberry.com/ns/widgets"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="com.groupxs.cordova.plugin.backgroundgpssend"
+	version="0.0.1">
+
+    <name>BackgroundGpsSend</name>
+    <description>Cordova Background GPS Send Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,geolocation,background</keywords>
+    <repo>https://github.com/groupXS/cordova-plugin-background-gps-send.git</repo>
+    <issue>https://github.com/groupXS/cordova-plugin-background-gps-send/issues</issue>
+
+    <!-- android -->
+    <platform name="android">
+        <js-module src="www/backgroundgpssend.js" name="backgroundgpssend">
+            <clobbers target="plugin.background.gpssend" />
+        </js-module>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BackgroundGpsSend">
+	            <param name="android-package" value="com.groupxs.cordova.plugin.backgroundgpssend.BackgroundSender"/>
+	        </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        </config-file>
+
+        <source-file src="src/android/GeoSender.java" target-dir="src/com/groupxs/cordova/plugin/backgroundgpssend" />
+    </platform>
+
+    <!-- ios -->
+    <!-- <platform name="ios">
+        <js-module src="www/backgroundgpssend.js" name="backgroundgpssend">
+            <clobbers target="plugin.background.gpssend" />
+        </js-module>
+
+        <config-file target="config.xml" parent="/*">
+	        <feature name="Geolocation">
+	            <param name="ios-package" value="GRPXSBack"/>
+	        </feature>
+        </config-file>
+        <header-file src="src/ios/GRPXSBack.h" />
+	    <source-file src="src/ios/GRPXSBack.m" />
+    </platform> -->
+</plugin>
