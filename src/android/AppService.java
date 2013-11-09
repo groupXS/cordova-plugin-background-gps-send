@@ -59,7 +59,7 @@ public class AppService extends WakefulIntentService {
 			nameValuePairs.add(new BasicNameValuePair("Speed", "0"));
 			nameValuePairs.add(new BasicNameValuePair("AltitudeAccuracy", "0"));
 
-			getJSONfromURL("https://bikeheldapi-dev.azurewebsites.net/api/GpsUpdate", nameValuePairs);
+			getJSONfromURL("https://localhost/api/GpsUpdate", nameValuePairs);
 		}
 		catch (Exception e) {
 			Log.d("CordovaPlugin", "Exception sending data to server");
