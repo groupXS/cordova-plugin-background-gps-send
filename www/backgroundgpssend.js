@@ -24,8 +24,18 @@ var backgroundgpssend = {
      * @param options    the options for helloWorld
      */
     helloWorld: function(onSuccess, onError, options) {
-	    options = parseParameters(options);
+        options = parseParameters(options);
         exec(onSuccess, onError, "BackgroundGpsSend", "helloWorld", [options.argument]);
+    },
+
+    startService: function (onSuccess, onError, options) {
+        options = parseParameters(options);
+        exec(onSuccess, onError, "BackgroundGpsSend", "startService", [options.argument]);
+    },
+
+    stopService: function (onSuccess, onError, options) {
+        options = parseParameters(options);
+        exec(onSuccess, onError, "BackgroundGpsSend", "stopService", [options.argument]);
     }
 };
 

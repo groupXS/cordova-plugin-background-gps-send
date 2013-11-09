@@ -25,12 +25,22 @@
 	        </feature>
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="/*">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
             <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+			<uses-permission android:name="android.permission.WAKE_LOCK" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
 
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+			<receiver android:name="com.groupxs.cordova.plugin.backgroundgpssend.OnAlarmReceiver" />
+			<service android:name="com.groupxs.cordova.plugin.backgroundgpssend.AppService" />
+        </config-file>
+
+        <source-file src="src/android/AppService.java" target-dir="src/com/groupxs/cordova/plugin/backgroundgpssend" />
         <source-file src="src/android/BackgroundSender.java" target-dir="src/com/groupxs/cordova/plugin/backgroundgpssend" />
+        <source-file src="src/android/OnAlarmReceiver.java" target-dir="src/com/groupxs/cordova/plugin/backgroundgpssend" />
+        <source-file src="src/android/WakefulIntentService.java" target-dir="src/com/groupxs/cordova/plugin/backgroundgpssend" />
     </platform>
 
     <!-- ios -->
