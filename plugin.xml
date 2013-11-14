@@ -44,7 +44,7 @@
     </platform>
 
     <!-- ios -->
-    <!-- <platform name="ios">
+    <platform name="ios">
         <js-module src="www/backgroundgpssend.js" name="backgroundgpssend">
             <clobbers target="plugin.background.gpssend" />
         </js-module>
@@ -56,5 +56,5 @@
         </config-file>
         <header-file src="src/ios/GRPXSBack.h" />
 	    <source-file src="src/ios/GRPXSBack.m" />
-    </platform> -->
+    </platform>
 </plugin>
