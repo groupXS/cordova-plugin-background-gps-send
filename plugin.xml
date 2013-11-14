@@ -50,7 +50,7 @@
         </js-module>
 
         <config-file target="config.xml" parent="/*">
-	        <feature name="Geolocation">
+	        <feature name="BackgroundGpsSend">
 	            <param name="ios-package" value="GRPXSBack"/>
 	        </feature>
         </config-file>
